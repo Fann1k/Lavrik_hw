@@ -129,14 +129,16 @@ section.profit .item {
 .wrap {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-evenly;
 }
 
 section.profit .item {
-	flex-basis: 300px;
-	margin: 5px;
+	flex-basis: 30%;
+	margin: 10px;
+	min-width: 150px;
 }
 
 section.profit .item img {
 	max-width: 100%;
+	max-height: 100%;
 }
