@@ -4,7 +4,8 @@ const gulp = require('gulp'),
     config = {
         root: './src/',
         css: {
-            src: 'precss/**/*.css',
+            watch: 'precss/**/*.less',
+            src: 'precss/styles.less',
             dest: 'css'
         },
         html: '*.html'
@@ -12,13 +13,15 @@ const gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync').create(),
     concat = require('gulp-concat'),
-    rename = require("gulp-rename");
+    rename = require("gulp-rename"),
+    less = require('gulp-less');
+
 
 gulp.task('build', function (done) {
-    gulp.src(config.root + config.css.src) //берем все подпапки в папке precss и все файлы с разрешением .css
+    gulp.src(config.root + config.css.src)
 
         .pipe(sourcemaps.init())
-        .pipe(concat('styles.css'))
+        .pipe(less())
         .pipe(autoprefixer({
             overrideBrowserslist: ['> 0.1%'],
             cascade: false
@@ -39,7 +42,7 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('watch:styles', function () {
-    gulp.watch(config.root + config.css.src, gulp.series('build')); //берет ./src/precss/**/*.css делает с ним 'build' + можно еще что-то после build добавить
+    gulp.watch(config.root + config.css.watch, gulp.series('build')); //берет ./src/precss/**/*.css делает с ним 'build' + можно еще что-то после build добавить
 });
 gulp.task('watch:html', function () {
     gulp.watch(config.root + config.html).on('change', browserSync.reload);

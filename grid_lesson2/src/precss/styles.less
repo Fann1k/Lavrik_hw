@@ -1,0 +1,67 @@
+@import 'vars.less';
+@import 'lib.less';
+
+html,
+body {
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.humans {
+    background: #232323;
+    text-align: center;
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .col {
+        background: #fff;
+        border-radius: 10px;
+        margin: 15px;
+        box-sizing: border-box;
+        padding: 10px;
+        width: calc(25% - 30px);
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: @break_sm) {
+            width: calc(50% - 30px);
+        }
+
+        @media screen and (max-width: @break_xs) {
+            width: calc(100% - 30px);
+        }
+
+        img {
+            margin: 10px 0;
+            max-width: 90%;
+            align-self: center;
+        }
+
+        .subtitle {
+            color: @color_green;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .job {
+            margin: auto 10px 10px 10px;
+        }
+
+        .follow {
+            background: @color_green;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+    }
+}
