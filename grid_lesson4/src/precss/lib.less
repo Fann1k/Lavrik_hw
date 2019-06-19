@@ -1,0 +1,10 @@
+.flex() {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sm-block(@content) {
+    @media screen and (max-width: @break_sm) {
+        @content();
+    }
+}

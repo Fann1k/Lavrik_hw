@@ -1,0 +1,58 @@
+@import 'smart-grid.less';
+.reset();
+
+/* styles */
+.wrap {
+	max-width: 960px;
+	margin: 0 auto;
+	height: 100%;
+	padding: 0 5px;
+	overflow: hidden;
+	.flex();
+
+	.sm-block( {
+			div:nth-child(even) {
+				flex-direction: row-reverse;
+			}
+		}
+
+	);
+}
+
+section.profit {
+	background: #232324;
+	padding: 15px 0;
+
+	.item {
+		border: 3px solid #fff;
+		text-align: center;
+		background: #fff;
+		.flex();
+		flex-basis: 400px;
+		margin: 5px;
+		justify-content: space-between;
+		flex-grow: 1;
+
+		.text {
+			text-align: left;
+			font-style: italic;
+			margin-left: 10px;
+			flex-basis: 290px;
+			flex-grow: 3;
+		}
+	}
+}
+
+/* positions */
+
+
+.img {
+	flex-basis: 100px;
+	flex-grow: 1;
+}
+
+// @media screen and (max-width: 841px) {
+// 	.wrap div:nth-child(even) {
+// 		flex-direction: row-reverse;
+// 	}
+// }
