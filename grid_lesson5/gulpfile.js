@@ -12,7 +12,6 @@ const gulp = require('gulp'),
     },
     sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync').create(),
-    concat = require('gulp-concat'),
     rename = require("gulp-rename"),
     less = require('gulp-less');
 
