@@ -19,19 +19,19 @@ const gulp = require('gulp'),
 gulp.task('build', function (done) {
     gulp.src(config.root + config.css.src)
 
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(less())
-        .pipe(autoprefixer({
-            overrideBrowserslist: ['> 0.1%'],
-            cascade: false
-        }))
-        .pipe(cleanCSS({
-            level: 2
-        }))
+        // .pipe(autoprefixer({
+        //     overrideBrowserslist: ['> 0.1%'],
+        //     cascade: false
+        // }))
+        // .pipe(cleanCSS({
+        //     level: 2
+        // }))
         .pipe(rename({
             suffix: ".min"
         }))
-        .pipe(sourcemaps.write('.'))
+        // .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.root + config.css.dest))
 
         .pipe(browserSync.reload({
